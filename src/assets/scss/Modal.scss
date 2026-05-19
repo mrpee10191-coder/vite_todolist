@@ -1,0 +1,81 @@
+@use './variables.scss'as *;
+@use './mixin.scss'as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000b2;
+
+    &__block {
+        max-width: 312px;
+        width: 100%;
+        background: linear-gradient(0deg, #FFFBFE, #FFFBFE);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        border-radius: 28px;
+
+        &-title {
+            font-family: $FontName;
+            @include text(24px, $black)
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            label {
+                position: relative;
+
+                input {
+                    background: #E7E0EC;
+                    border-radius: 4px 4px 0 0;
+                    border-bottom: 1px solid $black;
+                    padding: 24px 16px 10px;
+                    width: 100%;
+                    &:focus::placeholder{
+                        color: transparent;
+                    }
+                    &:focus ~ span {
+                        opacity: 1;
+                        top: 8px;
+                        transition: 0.3s;
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    top: 24px;
+                    left: 16px;
+                    font-family: $FontName;
+                    @include text(12px, $purple);
+                    opacity: 0;
+                    transition: 0.3s;
+                }
+            }
+        }
+        
+        &-bottom {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            &_btn {
+                font-family: $FontName;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding: 10px;
+            }
+        }
+    }
+}

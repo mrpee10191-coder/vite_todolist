@@ -1,0 +1,17 @@
+@mixin text($size, $color, $weight:400) {
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin media($size) {
+    @media screen and (max-width:#{$size}px) {
+        @content;
+    }
+}
+
+@mixin flexBetween() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

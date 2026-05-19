@@ -1,0 +1,30 @@
+@use './variables.scss'as *;
+@use './mixin.scss'as *;
+
+
+.header {
+    box-shadow: 0px 1px 3px 0px #0000004D;
+    background: #F3EDF7;
+    padding: 18px 15px;
+    height: 64px;
+
+    &__nav {
+        @include flexBetween();
+        @include media(576){
+            gap: 20px;
+        }
+        &-lang {
+            font-family: $FontName;
+            @include text(22px, $black);
+        }
+        &-title {
+            font-family: $FontName;
+            @include text(22px, $black);
+        }
+        &-input {
+            width: 80%;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #c4c4c4;
+        }
+    }
+}

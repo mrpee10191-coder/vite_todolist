@@ -1,0 +1,7 @@
+export {default as search} from '../assets/img/search.svg'
+export {default as back} from '../assets/img/back.svg'
+export {default as edit} from '../assets/img/edit.svg'
+export {default as grid} from '../assets/img/grid.svg'
+export {default as list} from '../assets/img/list.svg'
+export {default as remove} from '../assets/img/remove.svg'
+export {default as reset} from '../assets/img/reset.svg'

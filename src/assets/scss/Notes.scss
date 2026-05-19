@@ -1,0 +1,103 @@
+@use './variables.scss'as *;
+@use './mixin.scss'as *;
+
+.notes {
+    margin-top: 30px;
+
+    &__top {
+        @include flexBetween();
+
+        &-title {
+            font-family: $FontName;
+            @include text(22px, #323232);
+        }
+
+        &-btn {
+            width: 120px;
+            height: 56px;
+            background: linear-gradient(0deg, rgba(103, 80, 164, 0.11), rgba(103, 80, 164, 0.11));
+            box-shadow: 0px 1px 3px 0px #0000004D;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+
+            &_span {
+                font-family: $FontName;
+                @include text(14px, $purple, 500)
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        &.active {
+            grid-template-columns: 1fr;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: linear-gradient(0deg,
+                    rgba(103, 80, 164, 0.05),
+                    rgba(103, 80, 164, 0.05));
+            box-shadow: 0px 1px 3px 1px #00000026;
+            border-radius: 16px;
+            padding: 16px;
+
+            &_top {
+                display: flex;
+                flex-direction: column;
+
+                &.active {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                &-title {
+                    font-family: $FontName;
+                    @include text(16px, $black, 500);
+                }
+
+                &-date {
+                    font-family: $FontName;
+                    @include text(14px, $gray);
+                }
+            }
+
+            &_desc {
+                font-family: $FontName;
+                @include text(14px, #49454f, 400)
+            }
+
+            &_bottom {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                &-btn {
+                    padding: 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    
+                    & span {
+                        font-family: $FontName;
+                        font-weight: 500;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
