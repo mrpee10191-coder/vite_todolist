@@ -28,6 +28,12 @@
                 @include text(14px, $purple, 500)
             }
         }
+
+        @media (max-width: 1010px) {
+            &-btn {
+                display: none !important; // Кнопка исчезает, так как переключать больше нечего
+            }
+        }
     }
 
     &__list {
@@ -38,6 +44,13 @@
 
         &.active {
             grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 1010px) {
+            // На экранах меньше 1010px карточки ВСЕГДА идут в 1 колонку (вертикально)
+            grid-template-columns: 1fr !important;
+            padding-bottom: 90px; // Заметки снизу не дойдут до кнопки
+            padding-right: 15px;
         }
 
         &-item {
@@ -78,7 +91,7 @@
                 font-family: $FontName;
                 @include text(14px, #49454f, 400);
                 word-break: break-all;
-                
+
             }
 
             &_bottom {

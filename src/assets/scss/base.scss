@@ -68,4 +68,11 @@ input {
     justify-content: center;
     border-radius: 16px;
     
+    @media (max-width: 1010px) {
+        bottom: 15px; // Прижимаем ближе к самому низу экрана
+        right: 15px;  // И ближе к правому краю
+        
+        // Если кнопка слишком большая, можно её слегка уменьшить на мобилках:
+        transform: scale(0.9); 
+    }
 }

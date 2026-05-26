@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { v4 } from 'uuid'
 import { TodoContext } from '../context/todoContext'
 import { useTranslation } from 'react-i18next'
