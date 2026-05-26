@@ -16,6 +16,7 @@
         &-lang {
             font-family: $FontName;
             @include text(22px, $black);
+            text-transform: uppercase;
         }
         &-title {
             font-family: $FontName;

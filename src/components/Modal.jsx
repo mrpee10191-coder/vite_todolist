@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { v4 } from 'uuid'
 import { TodoContext } from '../context/todoContext'
+import { useTranslation } from 'react-i18next'
 
 const Modal = ({ edit, editNote }) => {
+    const { t } = useTranslation();
+
     const [title, setTitle] = useState(editNote?.title ?? '')
     const [desc, setDesc] = useState(editNote?.desc ?? '')
 
@@ -24,7 +27,7 @@ const Modal = ({ edit, editNote }) => {
     return (
         <div className='modal'>
             <div className="modal__block">
-                <h3 className='modal__block-title'>{edit ? 'Изменить заметку' : 'Добавить заметку'}</h3>
+                <h3 className='modal__block-title'>{edit ? t("editNote") : t("addNote")}</h3>
                 <div className="modal__block-form">
                     <label >
                         <input type="text"
@@ -42,8 +45,8 @@ const Modal = ({ edit, editNote }) => {
                     </label>
                 </div>
                 <div className="modal__block-bottom">
-                    <button className='modal__block-bottom_btn red' onClick={() => closeModal()} >Отмена</button>
-                    <button className='modal__block-bottom_btn purple' onClick={() => addOrChange()} >{edit ? 'Изменить' : 'Добавить'}</button>
+                    <button className='modal__block-bottom_btn red' onClick={() => closeModal()} >{t("cancel")}</button>
+                    <button className='modal__block-bottom_btn purple' onClick={() => addOrChange()} >{edit ? t("changeNote") : t("add")}</button>
                 </div>
             </div>
         </div>

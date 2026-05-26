@@ -41,6 +41,7 @@
         }
 
         &-item {
+            justify-content: space-between;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -64,6 +65,7 @@
                 &-title {
                     font-family: $FontName;
                     @include text(16px, $black, 500);
+                    word-break: break-all;
                 }
 
                 &-date {
@@ -74,7 +76,9 @@
 
             &_desc {
                 font-family: $FontName;
-                @include text(14px, #49454f, 400)
+                @include text(14px, #49454f, 400);
+                word-break: break-all;
+                
             }
 
             &_bottom {
@@ -87,7 +91,7 @@
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    
+
                     & span {
                         font-family: $FontName;
                         font-weight: 500;

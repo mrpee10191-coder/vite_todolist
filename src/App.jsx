@@ -8,13 +8,13 @@ import { TodoContext } from './context/todoContext'
 function App() {
 
   const setLS = () =>
-    (localStorage.notes = notes.length ? JSON.stringify(notes) : '');
+    (localStorage.notes = notes.length ? JSON.stringify(notes) : "");
 
   const getLS = () => localStorage.notes ? JSON.parse(localStorage.notes) : [];
 
 
   const [notes, setNotes] = useState(getLS())
-  const [searchVal, setSearchVal] = useState('')
+  const [searchVal, setSearchVal] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isEdit, setIsEdit] = useState(false)
   const [editNote, setEditNote] = useState(null)
@@ -60,7 +60,6 @@ function App() {
 
   useEffect(() => {
     setLS()
-
   }, [notes])
 
 
@@ -82,6 +81,7 @@ function App() {
           <img src={edit} alt="" />
         </button>
         {isModalOpen && <Modal edit={isEdit} editNote={editNote} />}
+
       </TodoContext.Provider>
 
     </>
